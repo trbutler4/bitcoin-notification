@@ -40,7 +40,8 @@ def format_bitcoin_history(bitcoin_history):
 
 def main():
     bitcoin_history = []
-    while True:
+    runNum = 5*1
+    while runNum > 0:
         price = get_latest_bitcoin_price()
         date = datetime.now()
         bitcoin_history.append({'date':date, 'price':price})
@@ -58,7 +59,8 @@ def main():
             bitcoin_history = []
         
         # sleep for 5 minutes
-        time.sleep(5*60)
+        #time.sleep(5*30)
+        runNum = runNum - 1
 
 if __name__ == '__main__':
     main()
